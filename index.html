@@ -7,14 +7,19 @@
 
   </head>
     <body>
+ <p>Insert profanity laced rant here:</p>
 <textarea rows="4" cols="50">
 
 </textarea>
 
 <input type="button" value="Click me" onclick="check()">
+
+<div id = "filtered"></div>
     <script>
       
        function check(){
+       	$("#filtered").text("");
+
         var text = $("textarea").val();
 
         var desire = text.replace(/[fF]+[uU]+[cC]+[kK]+/, "****")
@@ -31,7 +36,7 @@
 
 
 
-        $("body").append(desire4);
+        $("#filtered").append(desire4);
 
         //huh.  That kind worked, but 3 spaces became 2.
         //what else could we do.
