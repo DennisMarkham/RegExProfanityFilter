@@ -5,7 +5,20 @@
     <title>RegEx Profanity Filter</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<style>
+ /*body{
+  background-color: white;
+  background-image: url(profanity.png);
+  opacity: 0.5;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+</style>
   </head>
+
+
     <body>
  <p>Insert profanity laced rant here:</p>
 <textarea rows="4" cols="50">
@@ -33,7 +46,23 @@
 
         var desire4 = desire3.replace(/[pP]+[iI]+[sS]+[sS]+/, "****")
 
+        var desire5 = desire4.replace(/[bB]+[iI]+[tT]+[cC]+[hH]+/, "*****")
+        //"Bitch" does not censor
 
+
+        //you know what would be really impressive?  A program that takes from an array of 
+        //words and then makes a "replace" algorithm according to this formula.  Still, even
+        //the thought of such a  thing makes my head hurt.
+
+        //now, let's try some trickier profanities.  For example, a s s is in words like assistant, so...'ass' followed by a space or punctuation mark.
+
+        var desire6 = desire5.replace(/[aA]+[sS]+[sS]+[\s!?.]+/, "***")
+        //ass does not get censored.
+        
+        //dick can be a name.  So...
+
+        var desire7 = desire6.replace(/[d]+[iI]+[cC]+[kK]+/, "****")  
+        //dick does not get censored!
 
 
         $("#filtered").append(desire4);
