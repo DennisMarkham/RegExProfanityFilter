@@ -47,7 +47,7 @@
         var desire4 = desire3.replace(/[pP]+[iI]+[sS]+[sS]+/, "****")
 
         var desire5 = desire4.replace(/[bB]+[iI]+[tT]+[cC]+[hH]+/, "*****")
-        //"Bitch" does not censor
+     
 
 
         //you know what would be really impressive?  A program that takes from an array of 
@@ -57,15 +57,18 @@
         //now, let's try some trickier profanities.  For example, a s s is in words like assistant, so...'ass' followed by a space or punctuation mark.
 
         var desire6 = desire5.replace(/[aA]+[sS]+[sS]+[\s!?.]+/, "***")
-        //ass does not get censored.
+        //if only I could keep the ending punctuation.
+
+        var desire7 = desire6.replace(/[aA]+[sS]+[sS]+[hH]+[oO]+[lL]+[eE]+/, "*******")
         
-        //dick can be a name.  So...
+        
+        //dick can be a name, so if it starts with a capital d it will not be censored:
 
-        var desire7 = desire6.replace(/[d]+[iI]+[cC]+[kK]+/, "****")  
-        //dick does not get censored!
+        var desire8 = desire7.replace(/[d]+[iI]+[cC]+[kK]+/, "****")  
+       
 
 
-        $("#filtered").append(desire4);
+        $("#filtered").append(desire8);
 
         //huh.  That kind worked, but 3 spaces became 2.
         //what else could we do.
