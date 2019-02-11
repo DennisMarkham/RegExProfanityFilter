@@ -35,18 +35,18 @@
 
         var text = $("textarea").val();
 
-        var desire = text.replace(/[fF]+[uU]+[cC]+[kK]+/, "****")
+        var desire = text.replace(/[f]+[u]+[c]+[k]+/gi, "****")
         
 
-        var desire2 = desire.replace(/[sS]+[hH]+[iI]+[tT]+/, "****")
+        var desire2 = desire.replace(/[s]+[h]+[i]+[t]+/gi, "****")
       
 
-        var desire3 = desire2.replace(/[cC]+[uU]+[nN]+[tT]+/, "****")
+        var desire3 = desire2.replace(/[c]+[u]+[n]+[t]+/gi, "****")
 
 
-        var desire4 = desire3.replace(/[pP]+[iI]+[sS]+[sS]+/, "****")
+        var desire4 = desire3.replace(/[p]+[i]+[s]+[s]+/gi, "****")
 
-        var desire5 = desire4.replace(/[bB]+[iI]+[tT]+[cC]+[hH]+/, "*****")
+        var desire5 = desire4.replace(/[b]+[i]+[t]+[c]+[h]+/gi, "*****")
      
 
 
@@ -56,15 +56,15 @@
 
         //now, let's try some trickier profanities.  For example, a s s is in words like assistant, so...'ass' followed by a space or punctuation mark.
 
-        var desire6 = desire5.replace(/[aA]+[sS]+[sS]+[\s!?.]+/, "***")
+        var desire6 = desire5.replace(/[a]+[s]+[s]+[\s!?.]+/gi, "***")
         //if only I could keep the ending punctuation.
 
-        var desire7 = desire6.replace(/[aA]+[sS]+[sS]+[hH]+[oO]+[lL]+[eE]+/, "*******")
+        var desire7 = desire6.replace(/[a]+[s]+[s]+[h]+[o]+[l]+[e]+/gi, "*******")
         
         
         //dick can be a name, so if it starts with a capital d it will not be censored:
 
-        var desire8 = desire7.replace(/[d]+[iI]+[cC]+[kK]+/, "****")  
+        var desire8 = desire7.replace(/[d]+[iI]+[cC]+[kK]+/g, "****")  
        
 
 
