@@ -30,10 +30,27 @@
 <div id = "filtered"></div>
     <script>
       
+      // var assHolder = [];
+
+      // var wordArry = [];
+
+
        function check(){
        	$("#filtered").text("");
 
         var text = $("textarea").val();
+
+
+        //******
+        // var wordArray = text.split(" ");
+
+        // console.log (wordArray);
+
+        // if (wordArray[wordArray.length - 1] == /[a]+[s]+[s]+[\s!?.]+/gi)
+        // {
+        //   console.log("Yes!");
+        // }
+        //it seems you can't use regEx to match an item in an array.
 
         var desire = text.replace(/[f]+[u]+[c]+[k]+/gi, "****")
         
@@ -54,11 +71,11 @@
         //words and then makes a "replace" algorithm according to this formula.  Still, even
         //the thought of such a  thing makes my head hurt.
 
-        //now, let's try some trickier profanities.  For example, a s s is in words like assistant, so...'ass' followed by a space or punctuation mark.
+        //now, let's try some trickier profanities.  For example, a s s is in words like assistant, so...'ass' followed by a word boundary is censored.
 
-        var desire6 = desire5.replace(/[a]+[s]+[s]+[\s!?.]+/gi, "***")
-        //if only I could keep the ending punctuation.
-
+        var desire6 = desire5.replace(/[a]+[s]+[s]+\b/gi, "***")
+        
+        //although there are some instances where you ass is profane even if at the beginning of a word:
         var desire7 = desire6.replace(/[a]+[s]+[s]+[h]+[o]+[l]+[e]+/gi, "*******")
         
         
