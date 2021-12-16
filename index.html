@@ -52,18 +52,20 @@
         // }
         //it seems you can't use regEx to match an item in an array.
 
-        var desire = text.replace(/[f]+[u]+[c]+[k]+/gi, "****")
+        var c = "[censored]"
+
+        var desire = text.replace(/[f]+[u]+[c]+[k]+/gi, c)
         
 
-        var desire2 = desire.replace(/[s]+[h]+[i]+[t]+/gi, "****")
+        var desire2 = desire.replace(/[s]+[h]+[i]+[t]+/gi, c)
       
 
-        var desire3 = desire2.replace(/[c]+[u]+[n]+[t]+/gi, "****")
+        var desire3 = desire2.replace(/[c]+[u]+[n]+[t]+/gi, c)
 
 
-        var desire4 = desire3.replace(/[p]+[i]+[s]+[s]+/gi, "****")
+        var desire4 = desire3.replace(/[p]+[i]+[s]+[s]+/gi, c)
 
-        var desire5 = desire4.replace(/[b]+[i]+[t]+[c]+[h]+/gi, "*****")
+        var desire5 = desire4.replace(/[b]+[i]+[t]+[c]+[h]+/gi, c)
      
 
 
@@ -73,15 +75,16 @@
 
         //now, let's try some trickier profanities.  For example, a s s is in words like assistant, so...'ass' followed by a word boundary is censored.
 
-        var desire6 = desire5.replace(/[a]+[s]+[s]+\b/gi, "***")
+        var desire6 = desire5.replace(/[a]+[s]+[s]+\b/gi, c)
         
         //although there are some instances where you ass is profane even if at the beginning of a word:
-        var desire7 = desire6.replace(/[a]+[s]+[s]+[h]+[o]+[l]+[e]+/gi, "*******")
         
+        var desire7 = desire6.replace(/[a]+[s]+[s]+([h]+[o]+[l]+[e]+|[c]+[l]+[o]+[w]+[n]+|[h]+[a]+[t]+)/gi, c)
+    	//this algorithim censors "asshole", "assclown", and "asshat".  
         
         //dick can be a name, so if it starts with a capital d it will not be censored:
 
-        var desire8 = desire7.replace(/[d]+[iI]+[cC]+[kK]+/g, "****")  
+        var desire8 = desire7.replace(/[d]+[iI]+[cC]+[kK]+/g, c)  
        
 
 
