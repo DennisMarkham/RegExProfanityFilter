@@ -45,40 +45,38 @@
 
         const c = "[censored]"
 
-        text = text.replace(/[f]+[u]+[c]+[k]+/gi, c)
+        text = text.replace(/f+u+c+k+/gi, c)
         
 
-        text = text.replace(/[s]+[h]+[i]+[t]+/gi, c)
+        text = text.replace(/s+h+i+t+/gi, c)
       
 
-        text = text.replace(/[c]+[u]+[n]+[t]+/gi, c)
+        text = text.replace(/c+u+n+t+/gi, c)
 
 
-        text = text.replace(/[p]+[i]+[s]+[s]+/gi, c)
+        text = text.replace(/p+i+s{2,}/gi, c)
 
-        text = text.replace(/[b]+[i]+[t]+[c]+[h]+/gi, c)
+        text = text.replace(/b+i+t+c+h+/gi, c)
      
 
 
 
         //now, let's try some trickier profanities.  For example, a s s is in words like assistant, so...'ass' followed by a word boundary is censored.  It is also in words like "grass"
         //also not I'm not using the c variable, because I want to perserve the white space
-        text = text.replace(/\s[a]+[s]+[s]+\b/gi, " [censored]")
+        text = text.replace(/\sa+s{2,}\b/gi, " [censored]")
         
         //although there are some instances where you ass is profane even if at the beginning of a word:
         
-        text = text.replace(/[a]+[s]+[s]+([h]+[o]+[l]+[e]+|[c]+[l]+[o]+[w]+[n]+|[h]+[a]+[t]+)/gi, c)
-    	//this algorithim censors "asshole", "assclown", and "asshat".  
+        text = text.replace(/a+s{2,}(h+o+l+e+|c+l+o+w+n+|h+a+t+)/gi, c)
+      //this algorithim censors "asshole", "assclown", and "asshat".  
         
         //dick can be a name, so if it starts with a capital d it will not be censored:
 
-        text = text.replace(/[d]+[iI]+[cC]+[kK]+/g, c)  
+        text = text.replace(/d+[iI]+[cC]+[kK]+/g, c)  
        
 
 
         $("#filtered").append(text);
-
-       
 
        }
 
